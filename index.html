@@ -251,7 +251,7 @@ body:has(#page-our-story:target) .nav-link[href="#page-our-story"]{color:#fff;ba
 .club-proof-num{font-family:"Bebas Neue",sans-serif;font-size:34px;line-height:1;color:var(--blue);letter-spacing:.03em;margin-bottom:7px;}
 .club-proof-label{font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--dim);line-height:1.45;}
 .club-pilot-card{background:linear-gradient(135deg,rgba(30,144,255,.08),rgba(255,255,255,.018));border:1px solid var(--blue-border);border-radius:18px;padding:30px;margin:34px 0 28px;position:relative;overflow:hidden;}
-.club-pilot-card:after{content:"PILOT";position:absolute;right:-8px;bottom:-26px;font-family:"Bebas Neue",sans-serif;font-size:116px;line-height:1;color:rgba(255,255,255,.025);letter-spacing:.04em;pointer-events:none;}
+
 .club-pilot-label{font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);margin-bottom:10px;}
 .club-pilot-title{font-family:"Bebas Neue",sans-serif;font-size:34px;letter-spacing:.04em;line-height:1;color:#fff;margin-bottom:20px;}
 .club-pilot-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;position:relative;z-index:1;}
@@ -409,6 +409,31 @@ footer{
   .section-headline{font-size:clamp(34px,11vw,48px) !important;}
   .aa-right h3{font-size:34px;}
 }
+
+/* ── Athlete app entry points ── */
+.nav-app{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:44px;padding:11px 20px;border-radius:999px;
+  background:var(--gold);color:#080c14;text-decoration:none;
+  font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+  flex:0 0 auto;min-width:max-content;
+}
+.nav-app:hover{background:#ffda7d;transform:translateY(-1px);box-shadow:0 8px 22px rgba(255,208,96,.25);}
+.app-strip{
+  display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;
+  padding:14px 24px;background:rgba(255,208,96,.07);
+  border-top:1px solid rgba(255,208,96,.25);border-bottom:1px solid rgba(255,208,96,.25);
+}
+.app-strip-text{font-size:14px;font-weight:600;color:rgba(255,255,255,.75);}
+.app-strip-btn{
+  font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--gold);text-decoration:none;padding:6px 2px;border-bottom:2px solid var(--gold);
+}
+.app-strip-btn:hover{color:#ffda7d;border-color:#ffda7d;}
+.footer-app{color:var(--gold)!important;font-weight:700;}
+@media(max-width:768px){
+  .app-strip{gap:8px;padding:12px 16px;text-align:center;}
+}
 </style>
 </head>
 <body>
@@ -424,6 +449,7 @@ footer{
     <a class="nav-link" data-page="for-clubs" href="#page-for-clubs" onclick="showPage('for-clubs'); return false;">For Clubs</a>
     <a class="nav-link" data-page="for-athletes" href="#page-for-athletes" onclick="showPage('for-athletes'); return false;">For Athletes</a>
     <a class="nav-link" data-page="our-story" href="#page-our-story" onclick="showPage('our-story'); return false;">Our Story</a>
+    <a class="nav-app" href="#" onclick="return false;" role="link" aria-disabled="true" title="Athlete app launching soon" aria-label="Open the Absolute Athlete training app">Athlete Login</a>
     <a class="nav-cta" href="#contact" onclick="showPage('for-clubs'); scrollToContact(); return false;">Partner With Us</a>
   </div>
   </div>
@@ -532,6 +558,12 @@ footer{
     </div>
     </div>
   </section>
+<!-- ATHLETE APP STRIP -->
+<div class="app-strip">
+  <span class="app-strip-text">Already an AA athlete?</span>
+  <a class="app-strip-btn" href="#" onclick="return false;" role="link" aria-disabled="true" title="Athlete app launching soon">Open Your Training App &rarr;</a>
+</div>
+
 
   <!-- ATHLETIC AGE EXPLAINER -->
   <div class="aa-explainer">
@@ -673,7 +705,6 @@ footer{
 
     <!-- TAKES YOUR CLUB HOME SECTION -->
     <div style="margin:56px 0;padding:72px 64px;background:linear-gradient(135deg,rgba(8,12,20,1) 0%,rgba(15,21,32,1) 100%);border:1px solid var(--blue-border);border-radius:16px;position:relative;overflow:hidden;">
-      <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Bebas Neue',sans-serif;font-size:180px;color:rgba(30,144,255,.03);white-space:nowrap;pointer-events:none;letter-spacing:.02em;">HOME</div>
       <div style="font-size:13px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--blue);margin-bottom:24px;">A New Kind of Club Presence</div>
       <h3 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,5vw,72px);line-height:1;color:#fff;margin-bottom:32px;max-width:800px;">YOUR CLUB USED TO LIVE AT THE FIELD.<br>NOW IT LIVES IN <span style="color:var(--gold);">THEIR HOME.</span></h3>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;max-width:900px;">
@@ -1066,6 +1097,7 @@ footer{
   </div>
   <div class="footer-right">
     <div class="footer-links">
+      <a class="footer-link footer-app" href="#" onclick="return false;" role="link" aria-disabled="true" title="Athlete app launching soon">Athlete Login</a>
       <a class="footer-link" href="#page-how-it-works" onclick="showPage('how-it-works'); return false;">How It Works</a>
       <a class="footer-link" href="#page-for-clubs" onclick="showPage('for-clubs'); return false;">For Clubs</a>
       <a class="footer-link" href="#page-for-athletes" onclick="showPage('for-athletes'); return false;">For Athletes</a>
