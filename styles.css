@@ -388,6 +388,8 @@ footer{
   div[style*="grid-template-columns:repeat(4,1fr)"]{grid-template-columns:1fr !important;}
   div[style*="border-right:1px solid rgba(255,255,255,.06)"]{border-right:none !important;}
   table{display:block;width:100%;max-width:100%;overflow-x:auto;white-space:nowrap;font-size:12px !important;}
+  table th,table td{padding-left:8px;padding-right:8px;}
+  table th:first-child,table td:first-child{padding-left:0;}
   footer{padding:40px 24px;flex-direction:column;gap:24px;text-align:center;}
   .footer-links{justify-content:center;flex-wrap:wrap;}
 }
