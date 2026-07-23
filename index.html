@@ -477,6 +477,42 @@ footer{
   .hero-brand{font-size:28px;letter-spacing:.16em;margin-bottom:14px;padding-bottom:12px;}
   .hero-brand:after{width:58px;height:2px;}
 }
+
+/* ══ UI polish pass ══ */
+
+/* page transition */
+@keyframes pageFade{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+.page.active{animation:pageFade .38s cubic-bezier(.22,1,.36,1);}
+
+/* scroll reveal */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1);}
+.rv.in{opacity:1;transform:none;}
+.rv-d1{transition-delay:.08s;}.rv-d2{transition-delay:.16s;}.rv-d3{transition-delay:.24s;}
+
+/* card hover lift */
+.step,.stat,.club-value-card,.story-card,.club-pilot-step{
+  transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease;
+}
+.step:hover,.club-value-card:hover,.club-pilot-step:hover,.story-card:hover{
+  transform:translateY(-4px);
+  border-color:var(--blue-border);
+  box-shadow:0 14px 34px rgba(0,0,0,.35);
+}
+.stat:hover{transform:translateY(-3px);border-color:var(--blue-border);}
+
+/* keyboard focus */
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,summary:focus-visible{
+  outline:2px solid var(--blue);
+  outline-offset:3px;
+  border-radius:6px;
+}
+
+/* respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  *,*:before,*:after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;}
+  .rv{opacity:1;transform:none;}
+  html{scroll-behavior:auto;}
+}
 </style>
 </head>
 <body>
@@ -712,7 +748,7 @@ footer{
     <div class="section-eyebrow">Ready to Start</div>
     <h2 class="section-headline">GET YOUR ATHLETES<br>THEIR <span style="color:var(--gold);">ATHLETIC AGE.</span></h2>
     <p class="section-body" style="margin:0 auto 40px;">AA is club-distributed. Talk to your club director about bringing Absolute Athlete to your program, or reach out directly.</p>
-    <a class="btn-primary" href="#contact" onclick="showPage('for-clubs'); scrollToContact(); return false;">Contact Us</a>
+    <a class="btn-primary" href="#contact" onclick="showPage('for-clubs'); scrollToContact(); return false;">Bring AA To Your Club</a>
   </section>
 </div>
 
@@ -1130,6 +1166,13 @@ footer{
       <div class="founder-photo-role">Founder · Chiropractor · 25 Years Sports Performance</div>
     </div>
   </section>
+
+  <section class="section" style="text-align:center;padding-top:32px;padding-bottom:88px;">
+    <div class="ws-label" style="margin-bottom:14px;">Join Us</div>
+    <h2 class="section-headline">WE BUILT THIS FOR FAMILIES LIKE <span style="color:var(--gold);">YOURS.</span></h2>
+    <p class="section-body" style="margin:0 auto 36px;max-width:620px;">Absolute Athlete is launching with a small group of founding clubs. If this story sounds like the kind of development you want for your athletes, let's talk.</p>
+    <a class="btn-primary" href="#contact" onclick="showPage('for-clubs'); scrollToContact(); return false;">Apply for Founding Club Pilot</a>
+  </section>
 </div>
 
 <!-- FOOTER -->
@@ -1298,6 +1341,48 @@ function animateCount(el, start, end, duration, decimals, suffix, delay) {
   const compEl = document.getElementById('statCompletion');
   if (ageEl) ageEl.textContent = '11.8';
   if (compEl) compEl.textContent = '82%';
+})();
+</script>
+
+<script>
+(function(){
+  if (!('IntersectionObserver' in window)) return;
+  var sel = ['.step','.stat','.club-value-card','.story-card','.club-pilot-step',
+             '.ws-body','.aa-explainer','.contact-box','.founder-photo-card',
+             '.section-headline','.ws-headline'];
+  var nodes = document.querySelectorAll(sel.join(','));
+  nodes.forEach(function(el){
+    el.classList.add('rv');
+    var sibs = el.parentElement ? Array.prototype.filter.call(el.parentElement.children, function(c){return c.classList.contains('rv');}) : [];
+    var idx = sibs.indexOf(el);
+    if (idx === 1) el.classList.add('rv-d1');
+    else if (idx === 2) el.classList.add('rv-d2');
+    else if (idx >= 3) el.classList.add('rv-d3');
+  });
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, {threshold: 0.12, rootMargin: '0px 0px -6% 0px'});
+  nodes.forEach(function(el){
+    // anything already in view on load shows immediately
+    var r = el.getBoundingClientRect();
+    if (r.top < window.innerHeight * 0.9) { el.classList.add('in'); }
+    else io.observe(el);
+  });
+  // re-run visibility when switching pages
+  var origShow = window.showPage;
+  window.showPage = function(id){
+    var ok = origShow(id);
+    requestAnimationFrame(function(){
+      document.querySelectorAll('.page.active .rv:not(.in)').forEach(function(el){
+        var r = el.getBoundingClientRect();
+        if (r.top < window.innerHeight * 0.9) el.classList.add('in');
+        else io.observe(el);
+      });
+    });
+    return ok;
+  };
 })();
 </script>
 </body>
