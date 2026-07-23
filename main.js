@@ -22,6 +22,13 @@ function showPage(pageId) {
   return true;
 }
 
+function scrollToSection(id) {
+  setTimeout(() => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({behavior: 'smooth', block: 'start'});
+  }, 80);
+}
+
 function scrollToContact() {
   setTimeout(() => {
     const contact = document.getElementById('contact');
