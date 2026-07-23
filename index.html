@@ -454,6 +454,29 @@ footer{
   letter-spacing:.08em;
   text-transform:uppercase;
 }
+
+.hero-brand{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(30px,3.6vw,46px);
+  line-height:1;
+  letter-spacing:.2em;
+  color:#fff;
+  margin-bottom:16px;
+  padding-bottom:14px;
+  position:relative;
+}
+.hero-brand:after{
+  content:"";
+  position:absolute;
+  left:0;bottom:0;
+  width:74px;height:3px;
+  background:var(--gold);
+  border-radius:2px;
+}
+@media(max-width:768px){
+  .hero-brand{font-size:28px;letter-spacing:.16em;margin-bottom:14px;padding-bottom:12px;}
+  .hero-brand:after{width:58px;height:2px;}
+}
 </style>
 </head>
 <body>
@@ -484,7 +507,7 @@ footer{
     <div class="hero-glow-2"></div>
     <div class="hero-inner">
     <div class="hero-left">
-    <div style="font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:.4em;color:#fff;margin-bottom:12px;">ABSOLUTE ATHLETE</div>
+    <div class="hero-brand">ABSOLUTE ATHLETE</div>
     <div class="hero-eyebrow">Youth Athletic Development · Ages 8–14</div>
     <h1 class="hero-headline">
       <span class="hero-line">DEVELOP ATHLETES.</span>
