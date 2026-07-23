@@ -436,18 +436,24 @@ footer{
 }
 
 .ws-kicker{
-  display:block;
-  margin-top:22px;
-  padding-top:20px;
-  border-top:1px solid rgba(255,208,96,.28);
-  font-size:clamp(19px,2.1vw,25px);
-  line-height:1.45;
   font-weight:700;
+  font-size:1.15em;
   color:#fff;
-  letter-spacing:.01em;
 }
 .ws-kicker em{font-style:normal;color:var(--gold);}
-@media(max-width:768px){.ws-kicker{font-size:18px;margin-top:18px;padding-top:16px;}}
+
+.legal-todo{
+  display:inline-block;
+  margin-left:6px;
+  padding:3px 9px;
+  border:1px dashed var(--gold);
+  border-radius:6px;
+  color:var(--gold);
+  font-weight:700;
+  font-size:11px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
 </style>
 </head>
 <body>
@@ -1118,7 +1124,7 @@ footer{
       <a class="footer-link" href="#page-our-story" onclick="showPage('our-story'); return false;">Our Story</a>
       <a href="mailto:info@myabsoluteathlete.com" class="footer-link">Contact</a>
     </div>
-    <div class="footer-legal">© 2026 Absolute Athlete, Inc. All rights reserved. Absolute Athlete™ and Athletic Age™ are trademarks of Absolute Athlete, Inc. (applications filed).</div>
+    <div class="footer-legal">© 2026 Absolute Athlete, Inc. All rights reserved. <span class="legal-todo">REMINDER: add trademark / patent language here</span></div>
   </div>
 </footer>
 
