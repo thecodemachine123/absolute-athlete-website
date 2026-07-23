@@ -1,3 +1,8 @@
+document.addEventListener('DOMContentLoaded', function(){
+  var yearEl = document.getElementById('footerYear');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+});
+
 function showPage(pageId) {
   const targetPage = document.getElementById('page-' + pageId);
   if (!targetPage) return false;
