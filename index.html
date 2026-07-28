@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#080c14">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="canonical" href="https://myabsoluteathlete.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Absolute Athlete">
+<meta property="og:title" content="Absolute Athlete · Youth Athletic Development">
+<meta property="og:description" content="Every athlete gets a measurable Athletic Age — personalized training, retested every cycle. Built by a sports chiropractor and his two D1 sons. Ages 8–14.">
+<meta property="og:url" content="https://myabsoluteathlete.com/">
+<meta property="og:image" content="https://thecodemachine123.github.io/absolute-athlete-website/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://thecodemachine123.github.io/absolute-athlete-website/og-image.png">
+<meta name="twitter:title" content="Absolute Athlete · Youth Athletic Development">
+<meta name="twitter:description" content="Every athlete gets a measurable Athletic Age — personalized training, retested every cycle. Ages 8–14.">
+<title>Absolute Athlete · Youth Athletic Development</title>
+<meta name="description" content="Absolute Athlete helps clubs measure Athletic Age, prescribe personalized training, and prove youth athlete progress every cycle.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav role="navigation" aria-label="Primary navigation">
+  <div class="nav-shell">
+  <a class="nav-mark" href="#page-home" onclick="showPage('home'); return false;" aria-label="Go to home page">
+    <img src="logo.svg" alt="Absolute Athlete" style="height:52px;width:auto;">
+  </a>
+  <div class="nav-links">
+    <a class="nav-link" data-page="how-it-works" href="#page-how-it-works" onclick="showPage('how-it-works'); return false;">How It Works</a>
+    <a class="nav-link" data-page="for-clubs" href="#page-for-clubs" onclick="showPage('for-clubs'); return false;">For Clubs</a>
+    <a class="nav-link" data-page="for-athletes" href="#page-for-athletes" onclick="showPage('for-athletes'); return false;">For Athletes</a>
+    <a class="nav-link" data-page="our-story" href="#page-our-story" onclick="showPage('our-story'); return false;">Our Story</a>
+    <a class="nav-app app-soon" href="#" onclick="return false;" role="link" aria-disabled="true" tabindex="-1" title="Athlete app launching soon" aria-label="Absolute Athlete training app — coming soon">Athlete Login<span class="soon-badge">Coming Soon</span></a>
+    <a class="nav-cta" href="#contact" onclick="showPage('for-clubs'); scrollToContact(); return false;">Partner With Us</a>
+  </div>
+  <button class="nav-page-pill" id="navPagePill" aria-label="Current page — open menu" onclick="aaMenu(true)">Home</button>
+  <a class="nav-app nav-app-mobile app-soon" href="#" onclick="return false;" role="link" aria-disabled="true" tabindex="-1" title="Athlete app launching soon" aria-label="Absolute Athlete training app — coming soon">Athlete Login<span class="soon-badge">Coming Soon</span></a>
+  <button class="nav-burger" aria-label="Open menu" aria-expanded="false" aria-controls="aaMnav" onclick="aaMenu(true)">
+    <span></span><span></span><span></span>
+  </button>
+  </div>
+</nav>
+
+<div class="mnav" id="aaMnav" role="dialog" aria-modal="true" aria-label="Menu" aria-hidden="true">
+  <div class="mnav-head">
+    <span class="mnav-title">MENU</span>
+    <button class="mnav-close" aria-label="Close menu" onclick="aaMenu(false)">&times;</button>
+  </div>
+  <button class="mnav-link" data-page="home" onclick="aaGo('home')">Home</button>
+  <button class="mnav-link" data-page="how-it-works" onclick="aaGo('how-it-works')">How It Works</button>
+  <button class="mnav-link" data-page="for-clubs" onclick="aaGo('for-clubs')">For Clubs</button>
+  <button class="mnav-link" data-page="for-athletes" onclick="aaGo('for-athletes')">For Athletes</button>
+  <button class="mnav-link" data-page="our-story" onclick="aaGo('our-story')">Our Story</button>
+  <button class="mnav-link" onclick="aaGo('our-story'); scrollToSection('get-in-touch');">Contact</button>
+  <a class="mnav-app app-soon" href="#" onclick="return false;" aria-disabled="true" tabindex="-1" title="Athlete app launching soon">Athlete Login<span class="soon-badge">Coming Soon</span></a>
+  <button class="mnav-cta" onclick="aaGo('for-clubs'); scrollToContact();">Partner With Us</button>
+  <div class="social-row mnav-social">
+    <a class="social-link" href="#" aria-label="Absolute Athlete on Instagram" title="Instagram"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+    <a class="social-link" href="#" aria-label="Absolute Athlete on TikTok" title="TikTok"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+    <a class="social-link" href="#" aria-label="Absolute Athlete on Facebook" title="Facebook"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+  </div>
+</div>
+
+<!-- ═══════════════ HOME PAGE ═══════════════ -->
+<div class="page active" id="page-home">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-glow-1"></div>
+    <div class="hero-glow-2"></div>
+    <div class="hero-inner">
+    <div class="hero-left">
+    <div class="hero-brand">ABSOLUTE ATHLETE<span style="font-size:.42em;vertical-align:top;letter-spacing:0;">&trade;</span></div>
+    <div class="hero-eyebrow">Youth Athletic Development · Ages 8–14</div>
+    <h1 class="hero-headline">
+      <span class="hero-line">DEVELOP ATHLETES.</span>
+      <span class="hero-line">PROVE <em>PROGRESS.</em></span>
+      <span class="hero-line">RETAIN FAMILIES.</span>
+    </h1>
+    <p class="hero-sub">
+      Give every athlete in your program <strong>a measurable Athletic Age&trade;</strong> — personalized training, retested every cycle, visible to families all year long.
+    </p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="#contact" onclick="showPage('for-clubs'); scrollToContact(); return false;">Apply to Be a Founding Partner</a>
+      <a class="btn-secondary" href="#page-how-it-works" onclick="showPage('how-it-works'); return false;">See How It Works</a>
+    </div>
+    </div>
+
+    <!-- ATHLETIC AGE PROOF VISUAL -->
+    <div class="hero-right">
+    <div style="text-align:left;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);font-weight:600;margin-bottom:10px;">Sample Athlete Report</div>
+    <div class="aa-proof-visual" style="display:grid;grid-template-columns:1fr;gap:0;background:linear-gradient(135deg,#0a0f16 0%,#0e1621 60%,#090a0c 100%);border:1px solid rgba(255,255,255,.08);border-radius:16px;overflow:hidden;position:relative;max-width:560px;max-height:480px;justify-self:end;width:100%;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue),var(--gold));"></div>
+
+      <!-- Chart -->
+      <div style="padding:18px 22px 14px;border-bottom:1px solid rgba(255,255,255,.06);">
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:.06em;color:#fff;margin-bottom:8px;">ATHLETIC AGE OVER TIME</div>
+        <svg viewBox="0 0 460 150" preserveAspectRatio="xMidYMid meet" style="width:100%;height:auto;display:block;">
+          <defs>
+            <linearGradient id="heroFill" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0%" stop-color="#2478e4" stop-opacity="0.38"/>
+              <stop offset="100%" stop-color="#2478e4" stop-opacity="0.04"/>
+            </linearGradient>
+            <linearGradient id="heroLine" x1="0" x2="1" y1="0" y2="0">
+              <stop offset="0%" stop-color="#2478e4"/>
+              <stop offset="70%" stop-color="#2478e4"/>
+              <stop offset="100%" stop-color="#8eea16"/>
+            </linearGradient>
+            <filter id="heroGlow"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          </defs>
+          <line x1="40" y1="10" x2="440" y2="10" stroke="#242b35" stroke-width="1"/>
+          <line x1="40" y1="50" x2="440" y2="50" stroke="#242b35" stroke-width="1"/>
+          <line x1="40" y1="90" x2="440" y2="90" stroke="#242b35" stroke-width="1"/>
+          <line x1="40" y1="130" x2="440" y2="130" stroke="#39414d" stroke-width="1.2"/>
+          <line x1="40" y1="10" x2="40" y2="130" stroke="#39414d" stroke-width="1.2"/>
+          <text x="6" y="14" fill="#6b6b7a" font-size="11">12.0</text>
+          <text x="6" y="54" fill="#6b6b7a" font-size="11">11.0</text>
+          <text x="6" y="94" fill="#6b6b7a" font-size="11">10.0</text>
+          <path d="M75,62 L255,32 L435,21 L435,130 L75,130 Z" fill="url(#heroFill)" class="hero-chart-fill"/>
+          <polyline points="75,62 255,32 435,21" fill="none" stroke="url(#heroLine)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" class="hero-chart-line"/>
+          <circle cx="75" cy="62" r="6" fill="#0a0f16" stroke="#2478e4" stroke-width="3" class="hero-chart-dot" style="animation-delay:.2s;"/>
+          <circle cx="255" cy="32" r="6" fill="#0a0f16" stroke="#2478e4" stroke-width="3" class="hero-chart-dot" style="animation-delay:1.7s;"/>
+          <circle cx="435" cy="21" r="6" fill="#0a0f16" stroke="#8eea16" stroke-width="3" filter="url(#heroGlow)" class="hero-chart-dot" style="animation-delay:3.4s;"/>
+          <text x="58" y="52" fill="#ffffff" font-size="16" font-family="Bebas Neue, sans-serif">10.8</text>
+          <text x="238" y="22" fill="#ffffff" font-size="16" font-family="Bebas Neue, sans-serif">11.5</text>
+          <text x="395" y="14" fill="#ffffff" font-size="16" font-family="Bebas Neue, sans-serif">11.8</text>
+          <text x="60" y="146" fill="#6b6b7a" font-size="11">Combine 1</text>
+          <text x="237" y="146" fill="#6b6b7a" font-size="11">Combine 2</text>
+          <text x="408" y="146" fill="#6b6b7a" font-size="11">Combine 3</text>
+          <rect x="330" y="95" rx="6" ry="6" width="105" height="40" fill="rgba(142,234,22,.1)" stroke="rgba(142,234,22,.3)" class="hero-badge-pulse"/>
+          <text x="345" y="118" font-family="Bebas Neue, sans-serif" font-size="20" fill="#8eea16" class="hero-plusone">+1.0</text>
+          <text x="335" y="130" font-size="9" fill="#d8dce4">Across 3 Combines</text>
+        </svg>
+      </div>
+
+      <!-- Athlete card -->
+      <div style="padding:18px 22px;">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px;">
+          <img src="athlete-alex.png" alt="Alex Rivera" style="width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid rgba(30,144,255,.4);">
+          <div>
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.04em;color:#fff;line-height:1;">ALEX RIVERA</div>
+            <div style="font-size:12px;color:var(--mid);margin-top:4px;">Age 11 &bull; Soccer &bull; Prairie United SC</div>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+          <div>
+            <div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;">Athletic Age</div>
+            <div style="display:flex;align-items:baseline;gap:6px;">
+              <div id="statAthAge" style="font-family:'Bebas Neue',sans-serif;font-size:34px;color:var(--gold);line-height:1;">11.8</div>
+              <div style="font-size:13px;color:#8eea16;">+1.0</div>
+            </div>
+          </div>
+          <div>
+            <div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;">Completion Rate</div>
+            <div id="statCompletion" style="font-family:'Bebas Neue',sans-serif;font-size:34px;color:#8eea16;line-height:1;">82%</div>
+          </div>
+          <div style="grid-column:1 / -1;">
+            <div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;">Smart Focus</div>
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:#fff;line-height:1.2;">Explosive Power</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+  </section>
+<!-- ATHLETE APP STRIP -->
+<div class="app-strip">
+  <span class="app-strip-text">Already an AA athlete?</span>
+  <a class="app-strip-btn app-soon" href="#" onclick="return false;" role="link" aria-disabled="true" tabindex="-1" title="Athlete app launching soon">Open Your Training App &rarr;<span class="soon-badge">Coming Soon</span></a>
+</div>
+
+
+  <!-- ATHLETIC AGE EXPLAINER -->
+  <div class="aa-explainer">
+    <div>
+      <div class="aa-number" style="color:var(--gold);">11.8</div>
+      <div class="aa-number-label">Athletic Age · Example.</div>
+    </div>
+    <div class="aa-right">
+      <h3>What Is An <span style="color:var(--gold);">Athletic Age?</span></h3>
+      <p>Your chronological age tells you how long you've been alive. Your <strong>Athletic Age</strong> tells you where you actually are as an athlete — measured through a performance combine that tests the physical foundations every sport is built on.</p>
+      <p>Strength. Power. Speed. Coordination. Stability. These are the qualities that separate athletes who show up differently. <strong>Athletic Age makes them measurable for the first time.</strong></p>
+      <p>Once we know your Athletic Age, the platform prescribes a personalized training program — <strong>engineered specifically to you</strong>, not a generic plan — and retests every cycle to show real progress.</p>
+    </div>
+  </div>
+
+  <!-- WINDOW STRIP -->
+  <div class="window-strip">
+    <div>
+      <div class="ws-label">The Development Window</div>
+      <div class="ws-headline">AGES 8–14.<br>THIS IS WHEN<br>IT HAPPENS.</div>
+    </div>
+    <div class="ws-body">
+      Ages 8–14 are the period of peak neuromuscular development — when the brain and body are building the movement patterns, coordination, and athletic foundations that carry through an athlete's entire career. What gets built in this window sticks. What gets missed is much harder to recover later. <span class="ws-kicker">The athletes who develop these foundations before 15 <em>show up differently</em> when the game speeds up and starts asking more of them. Absolute Athlete is built to make sure yours is one of them.</span>
+    </div>
+  </div>
+
+  <!-- HOW IT WORKS PREVIEW -->
+  <section class="section">
+    <div class="section-eyebrow">How It Works</div>
+    <h2 class="section-headline">MEASURE. PRESCRIBE.<br><span>IMPROVE.</span> REPEAT.</h2>
+    <p class="section-body">A simple three-step cycle that gets smarter with every athlete, every combine, every session.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-title">The Combine</div>
+        <div class="step-body">Your club hosts a short performance testing event. <strong>AA runs it.</strong> Athletes complete movement and performance tests and receive their <strong>Athletic Age</strong> — a single number reflecting their physical development level.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-title">The Program</div>
+        <div class="step-body">Each athlete receives a training program built around their <strong>Athletic Age</strong> and individual results. Short, focused sessions take <strong>roughly 20 minutes</strong> and fit between practices or during the offseason. No equipment needed. Every exercise has a purpose.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-title">The Progress</div>
+        <div class="step-body">Athletes retest at the end of each cycle. Athletic Age updates. <strong>Each new cycle becomes smarter and more personalized</strong> based on what the system learned about that specific athlete.</div>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-num">8–14</div><div class="stat-label">Peak Development<br>Window (Years)</div></div>
+      <div class="stat"><div class="stat-num" style="color:var(--gold);">&asymp;20</div><div class="stat-label">Minutes Per<br>At-Home Session</div></div>
+      <div class="stat"><div class="stat-num">10</div><div class="stat-label">Week Cycles With<br>Retest &amp; Reset</div></div>
+    </div>
+    <div style="margin-top:48px;text-align:center;">
+      <a class="btn-primary" href="#contact" onclick="showPage('for-clubs'); scrollToContact(); return false;">Partner With Us</a>
+    </div>
+  </section>
+
+</div>
+
+<!-- ═══════════════ HOW IT WORKS PAGE ═══════════════ -->
+<div class="page" id="page-how-it-works">
+  <section class="section" style="padding-top:120px;">
+    <div class="section-eyebrow">How It Works</div>
+    <h2 class="section-headline" style="font-size:clamp(48px,7vw,88px);max-width:1000px;">THE FULL CYCLE.<br>FROM <span style="color:var(--gold);">COMBINE</span> TO PROGRESS.</h2>
+    <p class="section-body" style="font-size:18px;max-width:760px;">Every athlete goes through the same three-step cycle. The difference is what happens inside each step — because every prescription is built specifically for that athlete, based on their Athletic Age&trade; and foundation results.</p>
+    <div class="steps" style="margin-top:48px;">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-title">The Combine</div>
+        <div class="step-body">Your club hosts a short performance testing event. <strong>AA runs it.</strong> Athletes complete a series of movement and performance tests and receive their <strong>Athletic Age</strong> — a single number reflecting their physical development level. Results push to the athlete's personal device.</div>
+        <div class="step-quote">Led by college and high school athletes who were exactly where these kids are — the combine doesn't feel like a test. It feels like the best hour of their week.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-title">The Program</div>
+        <div class="step-body">Each athlete receives a training program built around their <strong>Athletic Age</strong> and individual results. Short, focused sessions take <strong>roughly 20 minutes</strong> and fit between practices or during the offseason. No equipment needed. Every exercise has a purpose.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-title">The Progress</div>
+        <div class="step-body">Athletes retest at the end of the cycle. Athletic Age updates. <strong>Each new cycle becomes smarter and more personalized</strong> based on what the system learned about that specific athlete. The program never repeats — it evolves.</div>
+      </div>
+    </div>
+    <div class="stats" style="margin-top:24px;">
+      <div class="stat"><div class="stat-num">8–14</div><div class="stat-label">Peak Development<br>Window (Years)</div></div>
+      <div class="stat"><div class="stat-num" style="color:var(--gold);">&asymp;20</div><div class="stat-label">Minutes Per<br>At-Home Session</div></div>
+      <div class="stat"><div class="stat-num">10</div><div class="stat-label">Week Cycles With<br>Retest &amp; Reset</div></div>
+    </div>
+  </section>
+
+  <!-- WINDOW STRIP -->
+  <div class="window-strip">
+    <div>
+      <div class="ws-label">The Development Window</div>
+      <div class="ws-headline">AGES 8–14.<br>THIS IS WHEN<br>IT HAPPENS.</div>
+    </div>
+    <div class="ws-body">
+      Ages 8–14 are the period of peak neuromuscular development — when the brain and body are building the movement patterns, coordination, and athletic foundations that carry through an athlete's entire career. What gets built in this window sticks. What gets missed is much harder to recover later. <span class="ws-kicker">The athletes who develop these foundations before 15 <em>show up differently</em> when the game speeds up and starts asking more of them. Absolute Athlete is built to make sure yours is one of them.</span>
+    </div>
+  </div>
+
+  <section class="section" style="text-align:center;">
+    <div class="section-eyebrow">Ready to Start</div>
+    <h2 class="section-headline">GET YOUR ATHLETES<br>THEIR <span style="color:var(--gold);">ATHLETIC AGE<span style="font-size:.42em;vertical-align:top;letter-spacing:0;">&trade;</span>.</span></h2>
+    <p class="section-body" style="margin:0 auto 40px;">AA is club-distributed. Talk to your club director about bringing Absolute Athlete&trade; to your program, or reach out directly.</p>
+    <a class="btn-primary" href="#contact" onclick="showPage('for-clubs'); scrollToContact(); return false;">Bring AA To Your Club</a>
+  </section>
+</div>
+
+<!-- ═══════════════ FOR CLUBS PAGE ═══════════════ -->
+<div class="page" id="page-for-clubs">
+
+  <section class="club-section section">
+    <div class="section-eyebrow">For Club Directors</div>
+    <h2 class="section-headline" style="font-size:clamp(52px,7vw,88px);">EVERY CLUB DEVELOPS PLAYERS.<br>NOW DEVELOP <span style="color:var(--gold);">ATHLETES.</span></h2>
+    <p class="section-body">Every club shows families how their child is developing as a player. With Absolute Athlete&trade;, your club can now show how they're developing as an <strong>athlete</strong> — with a real number, personalized training, and progress retested every cycle.</p>
+
+  <!-- DIRECTOR PANELS -->
+  <div class="director-panels" style="margin-top:48px;margin-bottom:48px;">
+    <div class="director-panel">
+      <div class="dp-num">01</div>
+      <div class="dp-label">The Shift</div>
+      <div class="dp-headline">MAKE DEVELOPMENT VISIBLE.</div>
+      <div class="dp-body">Families already see games and practices. AA shows the athletic foundation underneath — <strong>strength, movement, power, balance, and confidence</strong> they can follow each cycle.</div>
+    </div>
+    <div class="director-panel">
+      <div class="dp-num">02</div>
+      <div class="dp-label">The Family Relationship</div>
+      <div class="dp-headline">DEEPEN THE FAMILY RELATIONSHIP.</div>
+      <div class="dp-body">When parents can see measurable progress between seasons, your club becomes part of the athlete's growth story — not just the place they play.</div>
+    </div>
+    <div class="director-panel">
+      <div class="dp-num">03</div>
+      <div class="dp-label">The Club Opportunity</div>
+      <div class="dp-headline">ADD VALUE WITHOUT ADDING WORK.</div>
+      <div class="dp-body">AA handles the combine, training platform, and progress reporting so your coaches can keep doing what they already do best.</div>
+    </div>
+  </div>
+
+    <!-- TAKES YOUR CLUB HOME SECTION -->
+    <div style="margin:56px 0;padding:72px 64px;background:linear-gradient(135deg,rgba(8,12,20,1) 0%,rgba(15,21,32,1) 100%);border:1px solid var(--blue-border);border-radius:16px;position:relative;overflow:hidden;">
+      <div style="font-size:13px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--blue);margin-bottom:24px;">A New Kind of Club Presence</div>
+      <h3 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,5vw,72px);line-height:1;color:#fff;margin-bottom:32px;max-width:800px;">YOUR CLUB USED TO LIVE AT THE FIELD.<br>NOW IT LIVES IN <span style="color:var(--gold);">THEIR HOME.</span></h3>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;max-width:900px;">
+        <p style="font-size:16px;line-height:1.8;color:var(--mid);">Every home session becomes another touchpoint with your club — a quiet moment in the basement or driveway where <strong style="color:#fff;">your program is still helping them grow.</strong></p>
+        <p style="font-size:16px;line-height:1.8;color:var(--mid);">When families can see progress between seasons, they have a clearer reason to renew, refer, and stay connected to your program year-round.</p>
+      </div>
+    </div>
+
+    <div class="development-contrast">
+      <div class="contrast-card">
+        <div class="contrast-kicker">What clubs already do</div>
+        <div class="contrast-title">Player Development</div>
+        <div class="contrast-body">Coaching, team placement, game performance, positional growth, tactical understanding, and competitive experience.</div>
+      </div>
+      <div class="contrast-card highlight">
+        <div class="contrast-kicker">What AA adds</div>
+        <div class="contrast-title"><span>Athletic</span> Development</div>
+        <div class="contrast-body"><strong>Strength. Movement. Balance. Coordination. Power.</strong> The athletic foundation underneath the player — measured, trained, and retested each cycle. The kind of development that builds real confidence — and holds up under the demands of competition.</div>
+        <div class="contrast-metric"><span class="contrast-dot"></span> Athletic Age&trade; Score</div>
+      </div>
+    </div>
+
+    <div class="club-grid">
+      <div>
+        <div class="club-value-intro">
+          <div class="section-eyebrow" style="margin-bottom:12px;">Built for the club director</div>
+          <h3 class="club-value-title">MORE VALUE FOR FAMILIES.<br><span>NO EXTRA LOAD</span> ON COACHES.</h3>
+          <p class="club-value-sub">Absolute Athlete gives your club an entirely new layer of athletic development families can see between seasons, tryouts, and practices — without asking your coaches to run another program.</p>
+        </div>
+
+        <div class="club-value-grid">
+          <div class="club-value-card feature">
+            <div class="club-card-icon">01</div>
+            <div class="club-card-title"><span>Zero Coach Workload</span></div>
+            <div class="club-card-copy">AA runs the combine. The platform delivers the training. Your coaches keep coaching.</div>
+          </div>
+          <div class="club-value-card">
+            <div class="club-card-icon">02</div>
+            <div class="club-card-title">Prove Progress to Families</div>
+            <div class="club-card-copy">Athletic Age gives parents a clear number they can understand at the end of each cycle.</div>
+          </div>
+          <div class="club-value-card">
+            <div class="club-card-icon">03</div>
+            <div class="club-card-title">Built-In Retention</div>
+            <div class="club-card-copy">Families who see real progress have a stronger reason to renew, refer, and stay connected year-round.</div>
+          </div>
+          <div class="club-value-card">
+            <div class="club-card-icon">04</div>
+            <div class="club-card-title">Director Visibility</div>
+            <div class="club-card-copy">Track participation and engagement across your program without chasing spreadsheets.</div>
+          </div>
+        </div>
+
+        <div class="club-proof-strip" aria-label="Club pilot highlights">
+          <div class="club-proof-item">
+            <div class="club-proof-num">45–60</div>
+            <div class="club-proof-label">Minute Combine Window</div>
+          </div>
+          <div class="club-proof-item">
+            <div class="club-proof-num">0</div>
+            <div class="club-proof-label">Extra Coach Workload</div>
+          </div>
+          <div class="club-proof-item">
+            <div class="club-proof-num">10</div>
+            <div class="club-proof-label">Week Training Cycle</div>
+          </div>
+        </div>
+
+        <div class="club-pilot-card">
+          <div class="club-pilot-label">What onboarding actually looks like</div>
+          <div class="club-pilot-title">LIVE IN THREE SIMPLE STEPS.</div>
+          <div class="club-pilot-grid">
+            <div class="club-pilot-step">
+              <div class="club-pilot-week">Step 1</div>
+              <h4>Parents get the message.</h4>
+              <p>Your club emails every family the steps to get their athlete onboarded. Once that’s done, they’re ready for combine day.</p>
+            </div>
+            <div class="club-pilot-step">
+              <div class="club-pilot-week">Step 2</div>
+              <h4>Combine day happens.</h4>
+              <p>We run the combine at your facility and handle the setup.</p>
+            </div>
+            <div class="club-pilot-step">
+              <div class="club-pilot-week">Step 3</div>
+              <h4>Athletes begin.</h4>
+              <p>Training starts at home. Coaches do nothing differently.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="club-positioning-callout">
+          <strong>AA DOES NOT <span>REPLACE</span> YOUR COACHES.</strong>
+          <p>It gives families measurable physical development between practices, seasons, and tryouts — a new category of value sitting alongside everything your club already provides.</p>
+        </div>
+
+        <p class="seasonal-note">AA is designed to run between seasons and alongside them, building the physical foundation during windows when club training is lighter so athletes arrive measurably more developed than the year before.</p>
+      </div>
+
+      <div class="contact-box" id="contact">
+        <div class="contact-box-title">FOUNDING CLUB PARTNER</div>
+        <div class="contact-box-sub">We are accepting a limited number of founding club partners for our fall 2026 pilot. Founding partners shape the product, lock in founding-partner pricing for the life of the partnership, and establish AA in their market first.</div>
+        <form id="partnerForm" class="contact-form" action="https://formspree.io/f/xgobvnzo" method="POST" onsubmit="handleSubmit(event)" novalidate>
+          <div class="form-group"><input type="text" name="name" class="form-input" placeholder="Your name" autocomplete="name" required aria-label="Your name"></div>
+          <div class="form-group"><input type="text" name="club" class="form-input" placeholder="Club name" autocomplete="organization" aria-label="Club name"></div>
+          <div class="form-group"><input type="email" name="email" class="form-input" placeholder="Email address" autocomplete="email" required aria-label="Email address"></div>
+          <div class="form-group"><textarea name="message" class="form-input" placeholder="Tell us about your club — sport, age groups, approximate number of athletes" aria-label="Message"></textarea></div>
+          <button class="form-submit" type="submit">Send Inquiry</button>
+          <div class="form-note" id="formStatus" role="status" aria-live="polite">Or email us directly at <a href="mailto:info@myabsoluteathlete.com">info@myabsoluteathlete.com</a></div>
+        </form>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════════ FOR ATHLETES PAGE ═══════════════ -->
+<div class="page" id="page-for-athletes">
+
+  <!-- HERO -->
+  <section class="hero" style="min-height:70vh;justify-content:flex-start;">
+    <div class="hero-glow-1"></div>
+    <div class="hero-glow-2"></div>
+    <div style="max-width:1100px;">
+    <div class="hero-eyebrow">For Athletes · Ages 8–14</div>
+    <h1 class="hero-headline" style="font-size:clamp(52px,6.5vw,92px);">YOU HAVE AN AGE.<br>NOW YOU HAVE AN <span style="color:var(--gold);">ATHLETIC AGE<span style="font-size:.42em;vertical-align:top;letter-spacing:0;">&trade;</span>.</span></h1>
+    <p class="hero-sub">A single number that tells you exactly where you are as an athlete — and exactly what to train to get better. Measured at the combine. Updated every cycle. Yours.</p>
+    </div>
+  </section>
+
+  <!-- ATHLETIC AGE DASHBOARD -->
+  <div style="padding:0 56px 40px;">
+    <div class="section-eyebrow">Your Athletic Age</div>
+    <h2 class="section-headline">ONE NUMBER.<br>EVERYTHING <span style="color:var(--blue);">IT MEANS.</span></h2>
+    <p class="section-body" style="margin-bottom:16px;">Your Athletic Age&trade; comes from a combine — a short battery of performance tests that measures the physical foundations every sport is built on. Strength. Power. Speed. Coordination. Stability.</p>
+    <p class="section-body">If your Athletic Age is <strong style="color:#fff;">ahead of your real age</strong> — you're building something. If it's behind, now you know exactly what to work on. Every 10-week cycle ends with a retest, and you can watch your number climb.</p>
+    <p class="section-body" style="margin-top:16px;">A well-trained foundation doesn't just show up as a better score — it shows up as <strong style="color:#fff;">a body that can hold up</strong> under everything the game asks of it.</p>
+  </div>
+
+  <!-- DASHBOARD MOCKUP -->
+  <div style="padding:0 56px 96px;">
+    <div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);font-weight:600;margin-bottom:10px;">Sample Athlete Report &middot; Example Data</div>
+    <div style="background:#111418;border:1px solid rgba(255,255,255,.08);border-radius:16px;overflow:hidden;">
+
+      <!-- Athlete header -->
+      <div style="background:linear-gradient(135deg,#0a0f16 0%,#0e1621 52%,#090a0c 100%);padding:24px 32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;border-bottom:1px solid rgba(255,255,255,.06);">
+        <div style="display:flex;align-items:center;gap:18px;">
+          <img src="athlete-alex.png" alt="Alex Rivera" style="width:64px;height:64px;border-radius:50%;object-fit:cover;border:2px solid rgba(30,144,255,.4);">
+          <div>
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:.06em;color:#fff;line-height:1;">ALEX RIVERA</div>
+            <div style="font-size:13px;color:var(--mid);margin-top:6px;">Age 11 &bull; Soccer &bull; Prairie United SC</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
+          <div style="border:1px solid rgba(142,234,22,.4);border-radius:8px;padding:10px 18px;display:flex;align-items:center;gap:10px;">
+            <span style="font-size:20px;color:#8eea16;">↗</span>
+            <div>
+              <div style="font-size:13px;font-weight:700;color:#8eea16;">BUILDING STRONGLY</div>
+              <div style="font-size:11px;color:var(--dim);">Ahead of development pace</div>
+            </div>
+          </div>
+          <div style="text-align:right;">
+            <div style="font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:.1em;">At-Home Consistency</div>
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;color:#8eea16;line-height:1;">82%</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Combine row -->
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;padding:24px 32px;border-bottom:1px solid rgba(255,255,255,.06);">
+        <div>
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--dim);letter-spacing:.06em;">COMBINE 1</div>
+          <div style="font-size:11px;color:var(--dim);margin:4px 0 12px;">May 12, 2026</div>
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:48px;color:#fff;line-height:1;">10.8</div>
+          <div style="font-size:11px;color:var(--dim);margin-top:4px;">Athletic Age</div>
+        </div>
+        <div>
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--blue);letter-spacing:.06em;">COMBINE 2</div>
+          <div style="font-size:11px;color:var(--dim);margin:4px 0 12px;">Aug 18, 2026</div>
+          <div style="display:flex;align-items:flex-end;gap:16px;">
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:48px;color:var(--blue);line-height:1;">11.5</div>
+            <div>
+              <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;color:#8eea16;line-height:1;">+0.7</div>
+              <div style="font-size:11px;color:#8eea16;">+6.5%</div>
+            </div>
+          </div>
+        </div>
+        <div style="border:1px solid rgba(142,234,22,.5);border-radius:10px;padding:12px 16px;background:rgba(142,234,22,.03);">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:#8eea16;letter-spacing:.06em;">COMBINE 3</div>
+          <div style="font-size:11px;color:var(--dim);margin:4px 0 12px;">Nov 24, 2026</div>
+          <div style="display:flex;align-items:flex-end;gap:16px;">
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:48px;color:#8eea16;line-height:1;">11.8</div>
+            <div>
+              <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;color:#8eea16;line-height:1;">+0.3</div>
+              <div style="font-size:11px;color:#8eea16;">+2.6%</div>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--dim);letter-spacing:.06em;">NEXT COMBINE</div>
+          <div style="font-size:11px;color:var(--dim);margin:4px 0 16px;">Feb 2027</div>
+          <div style="width:48px;height:48px;border:1px solid rgba(255,255,255,.15);border-radius:8px;margin:0 auto;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:20px;">▣</div>
+        </div>
+      </div>
+
+      <!-- Chart + Foundation table -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;">
+        <div style="padding:24px 32px;border-right:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:.06em;color:#fff;margin-bottom:16px;">LEVEL-UP PATH &middot; ATHLETIC AGE</div>
+          <svg viewBox="0 0 760 280" preserveAspectRatio="xMidYMid meet" style="width:100%;height:auto;">
+            <defs>
+              <linearGradient id="aaFill2" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0%" stop-color="#2478e4" stop-opacity="0.38"/>
+                <stop offset="100%" stop-color="#2478e4" stop-opacity="0.04"/>
+              </linearGradient>
+              <linearGradient id="aaLine2" x1="0" x2="1" y1="0" y2="0">
+                <stop offset="0%" stop-color="#2478e4"/>
+                <stop offset="70%" stop-color="#2478e4"/>
+                <stop offset="100%" stop-color="#8eea16"/>
+              </linearGradient>
+              <filter id="glow2"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            </defs>
+            <line x1="55" y1="25" x2="725" y2="25" stroke="#242b35" stroke-width="1"/>
+            <line x1="55" y1="92" x2="725" y2="92" stroke="#242b35" stroke-width="1"/>
+            <line x1="55" y1="159" x2="725" y2="159" stroke="#242b35" stroke-width="1"/>
+            <line x1="55" y1="226" x2="725" y2="226" stroke="#39414d" stroke-width="1.2"/>
+            <line x1="55" y1="25" x2="55" y2="226" stroke="#39414d" stroke-width="1.2"/>
+            <text x="12" y="30" fill="#6b6b7a" font-size="13">12.0</text>
+            <text x="12" y="97" fill="#6b6b7a" font-size="13">11.0</text>
+            <text x="12" y="164" fill="#6b6b7a" font-size="13">10.0</text>
+            <text x="12" y="231" fill="#6b6b7a" font-size="13">9.0</text>
+            <path d="M120,105 L392,59 L665,39 L665,226 L120,226 Z" fill="url(#aaFill2)"/>
+            <polyline points="120,105 392,59 665,39" fill="none" stroke="url(#aaLine2)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="120" cy="105" r="8" fill="#111418" stroke="#2478e4" stroke-width="4"/>
+            <circle cx="392" cy="59" r="8" fill="#111418" stroke="#2478e4" stroke-width="4"/>
+            <circle cx="665" cy="39" r="8" fill="#111418" stroke="#8eea16" stroke-width="4" filter="url(#glow2)"/>
+            <text x="92" y="88" fill="#ffffff" font-size="22" font-family="Bebas Neue, sans-serif">10.8</text>
+            <text x="368" y="41" fill="#ffffff" font-size="22" font-family="Bebas Neue, sans-serif">11.5</text>
+            <text x="644" y="22" fill="#ffffff" font-size="22" font-family="Bebas Neue, sans-serif">11.8</text>
+            <text x="90" y="252" fill="#6b6b7a" font-size="13">Combine 1</text>
+            <text x="374" y="252" fill="#6b6b7a" font-size="13">Combine 2</text>
+            <text x="642" y="252" fill="#6b6b7a" font-size="13">Combine 3</text>
+            <rect x="575" y="78" rx="7" ry="7" width="130" height="58" fill="rgba(142,234,22,.1)" stroke="rgba(142,234,22,.3)"/>
+            <text x="610" y="106" font-family="Bebas Neue, sans-serif" font-size="30" fill="#8eea16" class="hero-plusone">+1.0</text>
+            <text x="596" y="126" font-size="12" fill="#d8dce4">Across 3 Combines</text>
+          </svg>
+        </div>
+        <div style="padding:24px 32px;border-bottom:1px solid rgba(255,255,255,.06);">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:.06em;color:#fff;margin-bottom:16px;">ATHLETE MAP &middot; STRENGTHS + FOCUS</div>
+          <table style="width:100%;border-collapse:collapse;font-size:14px;">
+            <thead>
+              <tr style="color:var(--dim);font-size:11px;letter-spacing:.08em;text-transform:uppercase;">
+                <th style="text-align:left;padding-bottom:12px;font-weight:700;">Area</th>
+                <th style="text-align:center;padding-bottom:12px;font-weight:700;">C1</th>
+                <th style="text-align:center;padding-bottom:12px;font-weight:700;color:var(--blue);">C2</th>
+                <th style="text-align:center;padding-bottom:12px;font-weight:700;color:#8eea16;">C3</th>
+                <th style="text-align:right;padding-bottom:12px;font-weight:700;color:#8eea16;">Change</th>
+              </tr>
+            </thead>
+            <tbody style="color:#fff;">
+              <tr style="border-top:1px solid rgba(255,255,255,.06);"><td style="padding:10px 0;">Explosive Power</td><td style="text-align:center;color:var(--dim);">66</td><td style="text-align:center;color:var(--blue);font-weight:700;">77</td><td style="text-align:center;color:#8eea16;font-weight:700;">83</td><td style="text-align:right;color:#8eea16;">+17 ↑</td></tr>
+              <tr style="border-top:1px solid rgba(255,255,255,.06);"><td style="padding:10px 0;">Speed &amp; Agility</td><td style="text-align:center;color:var(--dim);">65</td><td style="text-align:center;color:var(--blue);font-weight:700;">74</td><td style="text-align:center;color:#8eea16;font-weight:700;">80</td><td style="text-align:right;color:#8eea16;">+15 ↑</td></tr>
+              <tr style="border-top:1px solid rgba(255,255,255,.06);"><td style="padding:10px 0;">Control &amp; Deceleration</td><td style="text-align:center;color:var(--dim);">69</td><td style="text-align:center;color:var(--blue);font-weight:700;">77</td><td style="text-align:center;color:#8eea16;font-weight:700;">82</td><td style="text-align:right;color:#8eea16;">+13 ↑</td></tr>
+              <tr style="border-top:1px solid rgba(255,255,255,.06);"><td style="padding:10px 0;">Core Stability</td><td style="text-align:center;color:var(--dim);">64</td><td style="text-align:center;color:var(--blue);font-weight:700;">72</td><td style="text-align:center;color:#8eea16;font-weight:700;">79</td><td style="text-align:right;color:#8eea16;">+15 ↑</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- What changed / Next focus -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;">
+        <div style="padding:24px 32px;border-right:1px solid rgba(255,255,255,.06);display:flex;gap:16px;">
+          <div style="width:40px;height:40px;border-radius:50%;border:1px solid rgba(142,234,22,.4);display:flex;align-items:center;justify-content:center;color:#8eea16;font-size:18px;flex-shrink:0;">↗</div>
+          <div>
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:.08em;color:#8eea16;margin-bottom:6px;">BIGGEST WIN</div>
+            <div style="font-size:13px;line-height:1.7;color:var(--mid);">Alex improved most in <strong style="color:#fff;">Explosive Power (+17)</strong> and <strong style="color:#fff;">Speed &amp; Agility (+15)</strong>, building a stronger base for speed, acceleration, and overall athletic performance.</div>
+          </div>
+        </div>
+        <div style="padding:24px 32px;display:flex;gap:16px;">
+          <div style="width:40px;height:40px;border-radius:50%;border:1px solid var(--blue-border);display:flex;align-items:center;justify-content:center;color:var(--blue);font-size:18px;flex-shrink:0;">◎</div>
+          <div>
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:.08em;color:var(--blue);margin-bottom:6px;">YOUR NEXT JUMP</div>
+            <div style="font-size:13px;line-height:1.7;color:var(--mid);">Continue building Explosive Power while advancing Control &amp; Deceleration and Core Stability. This will help Alex move even more efficiently on the field.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <section class="section" style="text-align:center;">
+    <div class="section-eyebrow">Get Started</div>
+    <h2 class="section-headline">FIND OUT YOUR<br><span style="color:var(--gold);">ATHLETIC AGE.</span></h2>
+    <p class="section-body" style="margin:0 auto 40px;">AA is available through your club. Talk to your club director about bringing Absolute Athlete&trade; to your program.</p>
+    <a class="btn-primary" href="#contact" onclick="showPage('for-clubs'); scrollToContact(); return false;">Ask My Club to Partner</a>
+  </section>
+
+</div>
+
+<!-- ═══════════════ OUR STORY PAGE ═══════════════ -->
+<div class="page" id="page-our-story">
+  <section class="section" style="padding-top:120px;">
+    <div class="section-eyebrow">Our Story</div>
+    <h2 class="section-headline" style="font-size:clamp(44px,5.5vw,72px);">BUILT BY PEOPLE<br>WHO <span style="color:var(--gold);">LIVED</span> IT.</h2>
+    <p class="story-lede"><strong>Absolute Athlete&trade; started in a basement, a driveway, and a family that lived youth development every day.</strong> The product is built from 25 years of sports performance experience, real training through the years kids actually grow, and a simple belief: every athlete deserves a measurable path forward.</p>
+
+    <div class="story-card-grid">
+      <div class="story-card">
+        <div class="story-card-kicker">Experience</div>
+        <div class="story-card-title">25 Years in Sports Performance</div>
+        <div class="story-card-copy">Dr. Nathan Price has worked with athletes across levels, from elite competitors to everyday youth athletes.</div>
+      </div>
+      <div class="story-card">
+        <div class="story-card-kicker">Origin</div>
+        <div class="story-card-title">Built From Real Training</div>
+        <div class="story-card-copy">Ayden and Andrew grew up doing the work this platform is now designed to guide, measure, and repeat.</div>
+      </div>
+      <div class="story-card">
+        <div class="story-card-kicker">Mission</div>
+        <div class="story-card-title">Made for Families</div>
+        <div class="story-card-copy">AA gives young athletes access to clear, individualized development — not just the families with private trainers.</div>
+      </div>
+    </div>
+
+    <div class="founders-grid">
+      <div class="founder-story story-full">
+        <div class="story-full-panel">
+          <div class="story-full-heading">The <span>Reason</span> Behind AA</div>
+          <p>Absolute Athlete was founded by Dr. Nathan Price, a chiropractor with 25 years of experience in sports performance, and his two sons Ayden and Andrew. For years, Ayden and Andrew were the test — doing the work in the basement and the driveway during those exact development years. They are both Division I football players now, enjoying the results of that early foundation work.</p>
+          <p>As a chiropractor, Dr. Price has spent over 2 decades watching what happens when athletic foundations are built well, and what happens when they are not. He has treated athletes from Olympic gold medalists to Saturday morning rec players, learning something from them all. Absolute Athlete is the early intervention he always wished existed. Individualized, measurable, and accessible to every young athlete — not just the ones with access to private trainers or elite performance programs.</p>
+          <p>The goal has always been simple: every kid deserves the tools to reach their full athletic potential.</p>
+        </div>
+      </div>
+      <div class="founder-credentials">
+        <div class="fc-item">
+          <div class="fc-text"><div class="fc-name">Dr. Nathan Price, D.C.</div><div class="fc-role">Co-Founder · Sports Performance · 25 Years</div></div>
+        </div>
+        <div class="fc-item">
+          <div class="fc-text"><div class="fc-name">Ayden Price</div><div class="fc-role">Co-Founder · Division I Athlete · Pre-Medicine</div></div>
+        </div>
+        <div class="fc-item">
+          <div class="fc-text"><div class="fc-name">Andrew Price</div><div class="fc-role">Co-Founder · Division I Athlete · Kinesiology</div></div>
+        </div>
+        <div class="fc-item">
+          <div class="fc-text"><div class="fc-name">Advisory Team</div><div class="fc-role">Sports practitioners, physical therapists, certified trainers and coaches</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="founder-photos">
+      <div class="founder-photo-card">
+        <div class="founder-photo-wrap">
+        <img src="ayden.jpg" alt="Ayden Price" class="founder-photo" style="object-fit:cover;object-position:center top;width:100%;height:100%;">
+      </div>
+        <div class="founder-photo-name">Ayden Price</div>
+        <div class="founder-photo-role">Co-Founder</div>
+      </div>
+      <div class="founder-photo-card">
+        <div class="founder-photo-wrap">
+        <img src="andrew.jpg" alt="Andrew Price" class="founder-photo" style="object-fit:cover;object-position:center top;width:100%;height:100%;">
+      </div>
+        <div class="founder-photo-name">Andrew Price</div>
+        <div class="founder-photo-role">Co-Founder</div>
+      </div>
+      <div class="founder-photo-card">
+        <div class="founder-photo-wrap">
+        <img src="together-uni.jpg" alt="Ayden and Andrew Price at UNI" class="founder-photo" style="object-fit:cover;object-position:center top;width:100%;height:100%;">
+      </div>
+        <div class="founder-photo-name">Together at UNI</div>
+        <div class="founder-photo-role">University of Northern Iowa · Panthers Football</div>
+      </div>
+    </div>
+
+    <div class="founder-nate">
+      <div class="founder-nate-photo-wrap">
+      <img src="nate.jpg" alt="Dr. Nathan Price" class="founder-photo" style="object-fit:cover;object-position:center top;width:100%;height:100%;">
+    </div>
+      <div class="founder-photo-name">Dr. Nathan Price</div>
+      <div class="founder-photo-role">Co-Founder · Chiropractor · 25 Years Sports Performance</div>
+    </div>
+  </section>
+
+  <section class="section" style="text-align:center;padding-top:32px;padding-bottom:88px;">
+    <div class="ws-label" style="margin-bottom:14px;">Join Us</div>
+    <h2 class="section-headline">WE BUILT THIS FOR FAMILIES LIKE <span style="color:var(--gold);">YOURS.</span></h2>
+    <p class="section-body" style="margin:0 auto 36px;max-width:620px;">Absolute Athlete is launching with a small group of founding clubs. If this is the kind of development you want for your athletes, let's talk.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+      <a class="btn-primary" href="#contact" onclick="showPage('for-clubs'); scrollToContact(); return false;">Run a Club? Apply for the Pilot</a>
+      <a class="btn-secondary" href="#page-for-athletes" onclick="showPage('for-athletes'); return false;">A Parent? See What Your Athlete Gets</a>
+    </div>
+  </section>
+
+  <!-- GET IN TOUCH -->
+  <section class="section" id="get-in-touch" style="border-top:1px solid var(--rule);padding-top:64px;padding-bottom:88px;scroll-margin-top:110px;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;">
+      <div>
+        <div class="section-eyebrow">Get In Touch</div>
+        <h2 class="section-headline" style="font-size:clamp(34px,4.5vw,54px);">TALK TO US <span style="color:var(--gold);">DIRECTLY.</span></h2>
+        <p class="section-body" style="margin-bottom:26px;">Questions about the program, the combine, or the athlete app? Email <a href="mailto:info@myabsoluteathlete.com" style="color:var(--blue);text-decoration:none;font-weight:600;">info@myabsoluteathlete.com</a> and the right person will get back to you.</p>
+        <div class="social-row">
+          <a class="social-link" href="#" aria-label="Absolute Athlete on Instagram" title="Instagram"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+          <a class="social-link" href="#" aria-label="Absolute Athlete on TikTok" title="TikTok"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+          <a class="social-link" href="#" aria-label="Absolute Athlete on Facebook" title="Facebook"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+        </div>
+      </div>
+      <div class="founder-mail-card">
+        <p class="fm-kicker">Or go straight to a founder</p>
+        <p class="fm-sub">We're a family business — we answer our own email.</p>
+        <div class="fm-row">
+          <div class="fm-avatar">N</div>
+          <div><div class="fm-name">Dr. Nathan Price</div><a class="fm-mail" href="mailto:nathan@myabsoluteathlete.com">nathan@myabsoluteathlete.com</a></div>
+        </div>
+        <div class="fm-row">
+          <div class="fm-avatar">A</div>
+          <div><div class="fm-name">Ayden Price</div><a class="fm-mail" href="mailto:ayden@myabsoluteathlete.com">ayden@myabsoluteathlete.com</a></div>
+        </div>
+        <div class="fm-row">
+          <div class="fm-avatar">A</div>
+          <div><div class="fm-name">Andrew Price</div><a class="fm-mail" href="mailto:andrew@myabsoluteathlete.com">andrew@myabsoluteathlete.com</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<!-- PRIVACY -->
+<div class="page" id="page-privacy">
+  <section class="section" style="padding-top:96px;max-width:820px;">
+    <div class="section-eyebrow">Privacy</div>
+    <h2 class="section-headline">PRIVACY <span style="color:var(--gold);">POLICY.</span></h2>
+    <p class="section-body" style="margin-bottom:22px;">Absolute Athlete, Inc. respects the privacy of the families and clubs we work with. This page explains what this website collects and how it is used.</p>
+    <h3 style="font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:.03em;margin:28px 0 10px;">What this site collects</h3>
+    <p class="section-body">The only information this website collects is what you voluntarily enter into our contact form: your name, email address, club name, and message. We use it solely to respond to your inquiry about Absolute Athlete.</p>
+    <h3 style="font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:.03em;margin:28px 0 10px;">What we don't do</h3>
+    <p class="section-body">We do not sell, rent, or share your information with third parties for marketing. This website does not use advertising trackers, and it does not knowingly collect any information from athletes.</p>
+    <h3 style="font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:.03em;margin:28px 0 10px;">Athlete data</h3>
+    <p class="section-body">Athlete accounts and training data live in the Absolute Athlete application, which is separate from this website. Athlete accounts require verified parental consent before activation, and athlete information is never collected through this marketing site.</p>
+    <h3 style="font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:.03em;margin:28px 0 10px;">Service providers</h3>
+    <p class="section-body">Our contact form is delivered through a third-party form service, and this site is hosted on third-party infrastructure. These providers process your submission only to deliver it to us.</p>
+    <h3 style="font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:.03em;margin:28px 0 10px;">Questions or removal requests</h3>
+    <p class="section-body">To ask what we hold about you, or to have it deleted, email <a href="mailto:info@myabsoluteathlete.com" style="color:var(--blue);">info@myabsoluteathlete.com</a>.</p>
+    <p class="section-body" style="margin-top:28px;font-size:13px;color:var(--dim);">This policy covers the Absolute Athlete marketing website only. Last updated July 2026.</p>
+  </section>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-mark"><img src="logo-footer.svg" alt="Absolute Athlete — Athlete Built. Field Proven." style="height:112px;width:auto;display:block;"></div>
+    
+  </div>
+  <div class="footer-right">
+    <div class="social-row footer-social">
+      <a class="social-link" href="#" aria-label="Absolute Athlete on Instagram" title="Instagram"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+      <a class="social-link" href="#" aria-label="Absolute Athlete on TikTok" title="TikTok"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+      <a class="social-link" href="#" aria-label="Absolute Athlete on Facebook" title="Facebook"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+    </div>
+    <div class="footer-links">
+      <a class="footer-link" href="#page-privacy" onclick="showPage('privacy'); return false;">Privacy</a>
+      <a class="footer-link footer-app app-soon" href="#" onclick="return false;" role="link" aria-disabled="true" tabindex="-1" title="Athlete app launching soon">Athlete Login<span class="soon-badge">Coming Soon</span></a>
+      <a class="footer-link" href="#page-how-it-works" onclick="showPage('how-it-works'); return false;">How It Works</a>
+      <a class="footer-link" href="#page-for-clubs" onclick="showPage('for-clubs'); return false;">For Clubs</a>
+      <a class="footer-link" href="#page-for-athletes" onclick="showPage('for-athletes'); return false;">For Athletes</a>
+      <a class="footer-link" href="#page-our-story" onclick="showPage('our-story'); return false;">Our Story</a>
+      <a href="#get-in-touch" class="footer-link" onclick="showPage('our-story'); scrollToSection('get-in-touch'); return false;">Contact</a>
+    </div>
+    <div class="footer-legal">© <span id="footerYear">2026</span> Absolute Athlete, Inc. All rights reserved. Absolute Athlete&trade; and Athletic Age&trade; are trademarks of Absolute Athlete, Inc. (applications filed).</div>
+  </div>
+</footer>
+
+
+
+<script src="main.js"></script>
+</body>
+</html>

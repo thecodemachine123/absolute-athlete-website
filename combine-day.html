@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#080c14">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<title>Combine Day · Absolute Athlete</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+/* combine-day page-specific */
+.hero-club{font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,5.5vw,72px);letter-spacing:.03em;text-transform:uppercase;color:var(--blue);line-height:1;margin-bottom:12px;}
+.hero-clubline{display:block;font-family:'Bebas Neue',sans-serif;font-size:clamp(26px,3.4vw,38px);letter-spacing:.02em;color:var(--gold);margin-bottom:6px;}
+.bring-chips{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px;}
+.bring-chip{font-size:15px;font-weight:600;color:var(--mid);background:var(--surface);border:1px solid var(--rule);border-radius:22px;padding:9px 18px;}
+.bring-chip b{color:var(--gold);font-weight:700;}
+.tm-sup{font-size:.42em;vertical-align:top;letter-spacing:0;}
+.ww-value{font-family:'Bebas Neue',sans-serif;font-size:clamp(22px,2.6vw,32px);letter-spacing:.02em;color:#fff;line-height:1.15;}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav role="navigation" aria-label="Primary navigation">
+  <div class="nav-shell">
+  <a class="nav-mark" href="index.html" aria-label="Absolute Athlete home">
+    <img src="logo.svg" alt="Absolute Athlete" style="height:52px;width:auto;">
+  </a>
+  <a class="nav-cta" href="index.html">Visit Our Website</a>
+  </div>
+</nav>
+
+<div class="page active">
+
+<!-- HERO -->
+<section class="hero" style="justify-content:flex-start;">
+  <div class="hero-glow-1"></div>
+  <div class="hero-glow-2"></div>
+  <div style="max-width:900px;">
+    <div class="hero-club" id="clubEyebrow">[Club Name] · Combine Day</div>
+    <div class="hero-clubline" id="clubLine">[CLUB NAME] HAS JUST RAISED THE BAR.</div>
+    <h1 class="hero-headline" style="font-size:clamp(48px,6.5vw,88px);">LET'S SEE HOW <span style="color:var(--gold);">FAR YOU CAN GO.</span></h1>
+    <p class="hero-sub" style="max-width:640px;">A few fun challenges. Real college and high school athletes running the show. We'll be delivering you your <strong>Athletic Age&trade;</strong> soon after — the number that kicks off your whole training journey.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="#get-set-up">Get Your Athlete Set Up</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT / WHEN / WHERE -->
+<section class="section" style="padding-top:0;padding-bottom:24px;">
+  <div class="stats">
+    <div class="stat"><div class="stat-label" style="margin-bottom:10px;">What</div><div class="ww-value" id="wwWhat">[Club] Combine Day</div></div>
+    <div class="stat"><div class="stat-label" style="margin-bottom:10px;">When</div><div class="ww-value" id="wwWhen" style="color:var(--gold);">[Date &middot; Time]</div></div>
+    <div class="stat"><div class="stat-label" style="margin-bottom:10px;">Where</div><div class="ww-value" id="wwWhere">[Location]</div></div>
+  </div>
+</section>
+
+<!-- GET SET UP -->
+<section class="section" id="get-set-up" style="padding-top:24px;scroll-margin-top:90px;">
+  <div class="section-eyebrow">Get Set Up</div>
+  <h2 class="section-headline">THREE STEPS.<br><span style="color:var(--gold);">YOU'RE IN.</span></h2>
+  <div class="steps" style="margin-top:40px;">
+    <div class="step">
+      <div class="step-num">01</div>
+      <div class="step-title">Create Your Athlete Account</div>
+      <div class="step-body" id="onboardBody">Set up your athlete in the Absolute Athlete app before combine day. This takes just a few minutes.</div>
+      <a id="onboardBtn" class="btn-primary" style="display:inline-block;margin-top:18px;" href="https://app.myabsoluteathlete.com/">Start Onboarding &rarr;</a>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div class="step-title">Complete Payment</div>
+      <div class="step-body" id="payBody">[Payment details — ask your club]</div>
+      <a id="payBtn" class="btn-primary" style="display:none;margin-top:18px;" href="#">Complete Payment &rarr;</a>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <div class="step-title">Show Up Ready</div>
+      <div class="step-body">Bring athletic shoes, clothes they can move in, water, and energy. <strong>We'll handle the combine from there.</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT HAPPENS -->
+<section class="section" style="padding-top:24px;">
+  <div class="section-eyebrow">What To Expect</div>
+  <h2 class="section-headline">IT'S NOT A TRYOUT.<br>IT'S A <span style="color:var(--gold);">STARTING LINE.</span></h2>
+  <p class="section-body" style="font-size:17px;max-width:720px;">The combine is a series of quick, fun movement challenges — testing the things every great athlete needs: <strong>Explosive Power, Speed &amp; Agility, Control &amp; Deceleration, and Core Stability.</strong> There's nothing to study for and no way to fail. Every athlete walks away with their number and a plan built just for them.</p>
+</section>
+
+<!-- WHO RUNS IT -->
+<section class="section" style="padding-top:24px;">
+  <div class="section-eyebrow">Who's Running It</div>
+  <h2 class="section-headline">RUN BY <span style="color:var(--blue);">ATHLETES</span><br>WHO GET IT.</h2>
+  <p class="section-body" style="font-size:17px;max-width:720px;">Combine day isn't run by strangers with clipboards — it's led by <strong>college and high school athletes</strong> who were exactly where your athlete is now. They know how to make it fun, keep the energy high, and make every athlete feel like a competitor.</p>
+</section>
+
+<!-- WHAT TO BRING -->
+<section class="section" style="padding-top:24px;">
+  <div class="section-eyebrow">Before You Arrive</div>
+  <h2 class="section-headline">COME READY <span style="color:var(--blue);">TO MOVE.</span></h2>
+  <div class="bring-chips">
+    <span class="bring-chip"><b>&#10003;</b> Clothes you can move in</span>
+    <span class="bring-chip"><b>&#10003;</b> Athletic shoes</span>
+    <span class="bring-chip"><b>&#10003;</b> Water bottle</span>
+    <span class="bring-chip"><b>&#10003;</b> Your best energy</span>
+  </div>
+</section>
+
+<!-- WHAT YOU GET -->
+<section class="section" style="padding-top:24px;">
+  <div class="section-eyebrow">What You Walk Away With</div>
+  <h2 class="section-headline">YOUR ATHLETIC AGE<span class="tm-sup">&trade;</span>.<br><span style="color:var(--gold);">ON ITS WAY.</span></h2>
+  <div class="steps" style="margin-top:40px;">
+    <div class="step">
+      <div class="step-num">01</div>
+      <div class="step-title">Your Athletic Age</div>
+      <div class="step-body">One number that shows exactly where your athletic foundation stands right now. <strong>We'll get it to you soon after the combine.</strong></div>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div class="step-title">A Plan Built For You</div>
+      <div class="step-body">A personalized training program based on your own results — <strong>not a generic workout.</strong> About 20 minutes, three times a week, at home.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <div class="step-title">Proof You're Improving</div>
+      <div class="step-body">Retest at the end of the cycle and <strong>watch your Athletic Age climb</strong> — real, measurable proof it's working.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section class="section" style="text-align:center;padding-top:24px;padding-bottom:96px;">
+  <h2 class="section-headline">SEE YOU AT <span style="color:var(--gold);">THE COMBINE.</span></h2>
+  <div style="margin-top:32px;">
+    <a class="btn-secondary" href="index.html">Learn More About Absolute Athlete</a>
+  </div>
+</section>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-mark"><img src="logo-footer.svg" alt="Absolute Athlete — Athlete Built. Field Proven." style="height:112px;width:auto;display:block;"></div>
+  </div>
+  <div class="footer-right">
+    <div class="footer-links">
+      <a class="footer-link" href="index.html">Absolute Athlete Home</a>
+      <a class="footer-link" href="index.html#page-privacy">Privacy</a>
+      <a href="mailto:info@myabsoluteathlete.com" class="footer-link">Contact</a>
+    </div>
+    <div class="footer-legal">© <span id="footerYear">2026</span> Absolute Athlete, Inc. All rights reserved. Absolute Athlete&trade; and Athletic Age&trade; are trademarks of Absolute Athlete, Inc. (applications filed).</div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+<script>
+(function() {
+  var p = new URLSearchParams(location.search);
+  function set(id, v) { var el = document.getElementById(id); if (el && v) el.textContent = v; }
+  var club = (p.get('club') || '').trim();
+  if (club) {
+    set('clubEyebrow', club + ' · Combine Day');
+    set('clubLine', club.toUpperCase() + ' HAS JUST RAISED THE BAR.');
+    set('wwWhat', club + ' Combine Day');
+  }
+  var date = (p.get('date') || '').trim();
+  var time = (p.get('time') || '').trim();
+  var loc = (p.get('location') || '').trim();
+  if (date) set('wwWhen', time ? date + ' · ' + time : date);
+  if (loc) set('wwWhere', loc);
+
+  // Approved Stripe payment links only — one entry per club, keyed by a short code.
+  // The pay= URL parameter selects from this list; anything not listed shows no button.
+  var PAY_LINKS = {
+    'tjf': 'fZu00l649bhrces4I6cfK01'
+  };
+
+  var pay = (p.get('pay') || '').trim().toLowerCase();
+  var payBody = document.getElementById('payBody');
+  var payBtn = document.getElementById('payBtn');
+  if (pay === 'club') {
+    payBody.innerHTML = '<strong style="color:#8eea16;">&#10003; Covered by your club.</strong> Your club is sponsoring combine day &mdash; no payment needed. Your athlete\'s spot is reserved.';
+  } else if (PAY_LINKS[pay]) {
+    payBody.textContent = "After your athlete account is created, complete payment to reserve your combine spot.";
+    payBtn.href = 'https://buy.stripe.com/' + PAY_LINKS[pay];
+    payBtn.style.display = 'inline-block';
+  }
+})();
+</script>
+</body>
+</html>
