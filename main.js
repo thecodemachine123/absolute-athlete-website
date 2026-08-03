@@ -3,9 +3,32 @@ document.addEventListener('DOMContentLoaded', function(){
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 });
 
+// The site is a single page: submitting the partner form leaves its "sent" state
+// in the DOM, so returning to For Clubs (or a bfcache back-nav) would otherwise
+// show a used form to someone who never submitted. Reset it whenever it's shown.
+const FORM_STATUS_DEFAULT = 'Or email us directly at <a href="mailto:info@myabsoluteathlete.com">info@myabsoluteathlete.com</a>';
+
+function resetPartnerForm() {
+  const form = document.getElementById('partnerForm');
+  if (!form || form.dataset.submitting === 'true') return;
+  const btn = form.querySelector('.form-submit');
+  const status = document.getElementById('formStatus');
+  form.reset();
+  if (btn) {
+    btn.disabled = false;
+    btn.textContent = 'Send Inquiry';
+    btn.style.background = '';
+  }
+  if (status) status.innerHTML = FORM_STATUS_DEFAULT;
+}
+
+window.addEventListener('pageshow', resetPartnerForm);
+
 function showPage(pageId) {
   const targetPage = document.getElementById('page-' + pageId);
   if (!targetPage) return false;
+
+  resetPartnerForm();
 
   document.querySelectorAll('.page').forEach(page => {
     const isActive = page === targetPage;
@@ -99,6 +122,8 @@ async function handleSubmit(event) {
     btn.style.background = '';
   }
 
+  form.dataset.submitting = 'true';
+
   try {
     const res = await fetch('https://formspree.io/f/xgobvnzo', {
       method: 'POST',
@@ -120,6 +145,8 @@ async function handleSubmit(event) {
     setTimeout(() => {
       if (btn) btn.style.background = '';
     }, 3000);
+  } finally {
+    form.dataset.submitting = 'false';
   }
 
   return false;
